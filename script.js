@@ -170,8 +170,8 @@ function startGame() {
 
     // 游戏循环
     function gameLoop() {
-        // 检查是否已经达到5个蛋糕（如果是则停止循环）
-        if (cakeCount >= 5) return;
+        // 检查是否已经达到52个蛋糕（如果是则停止循环）
+        if (cakeCount >= 52) return;
 
         if (cakeSpawnTimer++ > 60) {
             spawnCake();
