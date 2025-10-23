@@ -1,0 +1,284 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 页面切换基础样式 */
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 登录页样式 */
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-box h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-box p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+#loginBtn {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#loginBtn:hover {
+    background-color: #45a049;
+}
+
+/* 游戏页样式 */
+#gamePage h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#gameCanvas {
+    background-color: #e6f7ff;
+    border: 2px solid #1890ff;
+    border-radius: 5px;
+}
+
+.score {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.score span {
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+/* 原有样式保持不变，添加以下内容 */
+
+/* 庆祝页面样式 */
+#celebrationPage {
+    background-color: #fff0f5;
+}
+
+.celebration-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.celebration-content h1 {
+    color: #e91e63;
+    font-size: 40px;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+.celebration-content p {
+    font-size: 24px;
+    color: #673ab7;
+    margin-bottom: 40px;
+}
+
+#bigCake {
+    width: 400px;
+    height: 350px;
+    margin: 0 auto 40px;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    z-index: 1; /* 容器作为基准层 */
+}
+
+/* 蛋糕底座（最下层） */
+#bigCake .base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #8d6e63;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 2; /* 底座在最下层 */
+}
+
+/* 蛋糕底层 */
+#bigCake .layer-bottom {
+    position: absolute;
+    bottom: 30px;
+    width: 90%;
+    height: 120px;
+    left: 5%;
+    background-color: #d32f2f;
+    border-radius: 15px;
+    box-shadow: 0 5px 0 #b71c1c inset;
+    z-index: 2;
+}
+
+/* 蛋糕中层 */
+#bigCake .layer-middle {
+    position: absolute;
+    bottom: 120px;
+    width: 75%;
+    height: 100px;
+    left: 12.5%;
+    background-color: #f44336;
+    border-radius: 15px;
+    box-shadow: 0 5px 0 #d32f2f inset;
+    z-index: 2;
+}
+
+/* 蛋糕顶层 */
+#bigCake .layer-top {
+    position: absolute;
+    bottom: 200px;
+    width: 60%;
+    height: 80px;
+    left: 20%;
+    background-color: #ef5350;
+    border-radius: 15px;
+    box-shadow: 0 5px 0 #e53935 inset;
+    z-index: 2;
+}
+
+/* 顶层奶油 */
+#bigCake .cream-top {
+    position: absolute;
+    bottom: 260px;
+    width: 70%;
+    height: 40px;
+    left: 15%;
+    background-color: #fff;
+    border-radius: 50% 50% 0 0;
+    z-index: 3; /* 奶油在蛋糕体上方 */
+}
+
+/* 侧边奶油花纹 */
+#bigCake .cream-side {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 3; /* 奶油花纹在蛋糕体上方 */
+}
+
+/* 底层奶油花纹位置 */
+#bigCake .cream-side:nth-of-type(1) { bottom: 40px; left: 15%; }
+#bigCake .cream-side:nth-of-type(2) { bottom: 40px; left: 35%; }
+#bigCake .cream-side:nth-of-type(3) { bottom: 40px; left: 55%; }
+#bigCake .cream-side:nth-of-type(4) { bottom: 40px; left: 75%; }
+
+/* 中层奶油花纹位置 */
+#bigCake .cream-side:nth-of-type(5) { bottom: 130px; left: 20%; }
+#bigCake .cream-side:nth-of-type(6) { bottom: 130px; left: 45%; }
+#bigCake .cream-side:nth-of-type(7) { bottom: 130px; left: 70%; }
+
+/* 水果装饰 */
+#bigCake .fruit {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 4; /* 水果在奶油上方 */
+}
+
+/* 草莓 */
+#bigCake .fruit.strawberry {
+    width: 30px;
+    height: 30px;
+    background-color: #e91e63;
+}
+#bigCake .fruit.strawberry::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 10px;
+    height: 15px;
+    background-color: #4caf50;
+    transform: rotate(-30deg);
+}
+
+/* 蓝莓 */
+#bigCake .fruit.blueberry {
+    width: 25px;
+    height: 25px;
+    background-color: #3949ab;
+}
+
+/* 水果位置（使用 nth-of-type 避免层级混乱） */
+#bigCake .fruit:nth-of-type(1) { bottom: 270px; left: 30%; } /* 草莓 */
+#bigCake .fruit:nth-of-type(2) { bottom: 280px; left: 45%; } /* 蓝莓 */
+#bigCake .fruit:nth-of-type(3) { bottom: 270px; left: 60%; } /* 草莓 */
+#bigCake .fruit:nth-of-type(4) { bottom: 190px; left: 30%; } /* 蓝莓 */
+#bigCake .fruit:nth-of-type(5) { bottom: 190px; left: 60%; } /* 蓝莓 */
+#bigCake .fruit:nth-of-type(6) { bottom: 100px; left: 25%; } /* 草莓 */
+#bigCake .fruit:nth-of-type(7) { bottom: 100px; left: 65%; } /* 草莓 */
+
+/* 仅保留一根蜡烛（位于顶层中间） */
+#bigCake .candle {
+    position: absolute;
+    width: 18px; /* 蜡烛蜡烛稍粗一点 */
+    height: 70px; /* 蜡烛稍长一点 */
+    background: linear-gradient(90deg, #ffeb3b, #ffc107, #ffeb3b);
+    bottom: 265px; /* 调整高度，确保烛底在顶层奶油上 */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 精确居中（抵消自身宽度） */
+    border-radius: 3px;
+    z-index: 5; /* 确保在最上层 */
+}
+
+/* 蜡烛火焰（保持闪烁效果） */
+#bigCake .candle::after {
+    content: '';
+    position: absolute;
+    top: -22px;
+    left: 20%;
+    transform: translateX(-50%); /* 火焰与蜡烛居中对齐 */
+    width: 12px;
+    height: 22px;
+    background-color: #ff9800;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #ffeb3b, 0 0 35px rgba(255,235,59,0.6);
+    animation: flicker 0.5s infinite alternate;
+}
+
+/* 蜡烛位置 */
+#bigCake .candle:nth-of-type(1) { left: 100%; }
+#bigCake .candle:nth-of-type(2) { left: 50%; }
+#bigCake .candle:nth-of-type(3) { left: 58%; }
+
+/* 动画保持不变 */
+@keyframes flicker {
+    from { transform: scale(1); opacity: 0.8; }
+    to { transform: scale(1.1); opacity: 1; }
+}

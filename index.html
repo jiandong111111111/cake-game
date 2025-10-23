@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>火柴人吃蛋糕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 登录页面 -->
+    <div id="loginPage" class="page">
+        <div class="login-box">
+            <h1>游戏登录</h1>
+            <p>陈鑫海</p>
+            <button id="loginBtn">点击登录</button>
+        </div>
+    </div>
+
+    <!-- 游戏页面 -->
+    <div id="gamePage" class="page hidden">
+        <h2>52个蛋糕有彩蛋</h2>
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div class="score">吃到的蛋糕：<span id="cakeCount">0</span> 个</div>
+        <div class="instruction">使用 ← → 方向键控制移动</div>
+    </div>
+
+    <!-- 新增：庆祝页面（显示巨大生日蛋糕） -->
+    <div id="celebrationPage" class="page hidden">
+        <div class="celebration-content">
+            <h1>恭喜陈鑫海！</h1>
+            <p>你吃到了52个蛋糕，获得了超级大蛋糕！</p>
+            <div id="bigCake"></div> <!-- 巨大生日蛋糕 -->
+            <button id="restartBtn">再来一次</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
